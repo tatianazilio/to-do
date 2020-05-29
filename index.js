@@ -10,7 +10,7 @@ function addTarefa() {
     cardDiv.classList.add("card");
     cardDiv.innerHTML = `<div class="card-body">
                             <p>${textoTarefa}</p>
-                            <button class="btn btn-success">Finalizar Tarefa</button>
+                            <button class="btn btn-success finalizar">Finalizar Tarefa</button>
                         </div>`;
     boardCard.appendChild(cardDiv);
 
@@ -18,9 +18,9 @@ function addTarefa() {
 };
 
 function addEventFinalizarTarefa() {
-    const ListaDeBotoes = document.querySelectorAll(".btn-success");
+    const ListaDeBotoesFinalizar = document.querySelectorAll(".finalizar");
 
-    ListaDeBotoes.forEach(botao => {
+    ListaDeBotoesFinalizar.forEach(botao => {
         botao.onclick = (event) => {
             const cardAvo = event.target.parentNode.parentNode;
             cardAvo.remove();
@@ -30,6 +30,7 @@ function addEventFinalizarTarefa() {
 
 btnAddTarefa.addEventListener("click", addTarefa);
 
+//Desafio para a próxima aula: criar mais um card ao pressionar Enter
 tarefa.addEventListener('keypress', function () {
     if (event.key == 'Enter') {
         addTarefa();
