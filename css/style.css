@@ -1,0 +1,15 @@
+.card {
+   width: 280px;
+  
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-body button{
+    margin-top: 10px;
+}
